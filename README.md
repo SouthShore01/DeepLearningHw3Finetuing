@@ -56,3 +56,12 @@ python src/evaluate_verification.py --model alexnet --checkpoint outputs/quick_a
 
 - 数据由 `torchvision.datasets.LFWPeople/LFWPairs` 自动下载到 `data/`。
 - 支持相似度：`cosine` / `euclidean` / `l1`。
+
+
+## Conflict 处理（保留最终版本）
+
+如果遇到 merge conflict，需要统一保留当前分支版本（final version）：
+
+```bash
+./scripts/resolve_conflicts_use_final.sh
+```
