@@ -80,7 +80,7 @@ def load_checkpoint_if_needed(model_name: str, checkpoint: str, device: torch.de
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data_root", type=str, default="data")
+    parser.add_argument("--data_root", type=str, default="archive")
     parser.add_argument("--model", type=str, choices=["alexnet", "vgg16"], required=True)
     parser.add_argument("--checkpoint", type=str, default="none")
     parser.add_argument("--metric", type=str, choices=["cosine", "euclidean", "l1"], default="cosine")

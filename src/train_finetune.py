@@ -92,7 +92,7 @@ def evaluate(model: nn.Module, loader: DataLoader, device: torch.device) -> tupl
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data_root", type=str, default="data")
+    parser.add_argument("--data_root", type=str, default="archive")
     parser.add_argument("--model", type=str, choices=["alexnet", "vgg16"], required=True)
     parser.add_argument("--epochs", type=int, default=5)
     parser.add_argument("--batch_size", type=int, default=32)

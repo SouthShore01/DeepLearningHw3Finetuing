@@ -15,6 +15,25 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+## 数据准备（必须手动）
+
+`torchvision` 已停止自动下载 LFW，所以需要手动准备数据。建议目录如下：
+
+```text
+data/
+  lfw-py/
+    lfw-deepfunneled/
+    pairs.txt
+    pairsDevTrain.txt
+    pairsDevTest.txt
+    people.txt
+    peopleDevTrain.txt
+    peopleDevTest.txt
+```
+
+- 数据根目录默认是 `data`，代码会读取 `data/lfw-py/`。
+- 如果你用的是别的路径，请通过 `--data_root` 指定。
+
 ## 目录
 
 - `src/train_finetune.py`：微调分类模型并保存 `best.pt`
@@ -54,7 +73,7 @@ python src/evaluate_verification.py --model alexnet --checkpoint outputs/quick_a
 
 ## 备注
 
-- 数据由 `torchvision.datasets.LFWPeople/LFWPairs` 自动下载到 `data/`。
+- 数据需手动下载并解压到 `data/lfw-py/`。
 - 支持相似度：`cosine` / `euclidean` / `l1`。
 
 
